@@ -1,122 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Homepage</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Projects Hub - Home</title>
+    <style>
+        /* Google Fonts: Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-    body {
-      background: #f4f4f4;
-      color: #333;
-    }
+        /* Reset and Basic Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      background-color: #1e90ff;
-      padding: 20px 40px;
-      text-align: center;
-      color: white;
-      font-size: 28px;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a092d;
+            color: #e5e7eb; /* text-gray-200 */
+            overflow-x: hidden;
+        }
 
-    nav {
-      background: #333;
-      color: white;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    nav a:hover {
-      color: #1e90ff;
-    }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .hero {
-      background: url('https://source.unsplash.com/1600x600/?technology,nature') no-repeat center center/cover;
-      color: white;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
+        /* Header and Navigation */
+        .header {
+            background: rgba(16, 16, 42, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: padding 0.3s ease;
+        }
 
-    .hero h1 {
-      font-size: 48px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 10px;
-    }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
 
-    .about {
-      padding: 40px;
-      text-align: center;
-    }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
 
-    .about h2 {
-      margin-bottom: 20px;
-      font-size: 32px;
-    }
+        .logo span {
+            color: #818cf8; /* indigo-400 */
+        }
 
-    .about p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
+        .nav-links a {
+            color: #d1d5db; /* text-gray-300 */
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 2rem;
+            transition: color 0.3s ease;
+        }
 
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
+        .nav-links a:hover {
+            color: #818cf8; /* indigo-400 */
+        }
+        
+        .nav-links .contact-btn {
+            background-color: #4f46e5; /* indigo-600 */
+            color: #fff;
+            padding: 0.6rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links .contact-btn:hover {
+            background-color: #4338ca; /* indigo-700 */
+            box-shadow: 0 0 15px 5px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(to top, #0a092d 5%, rgba(10, 9, 45, 0.7) 50%, rgba(10, 9, 45, 0.5) 100%), url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: #d1d5db; /* text-gray-300 */
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero .cta-button {
+            background-color: #4f46e5; /* indigo-600 */
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px 7px rgba(79, 70, 229, 0.5);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+        }
+
+        .about .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .about .title-p {
+            color: #9ca3af; /* text-gray-400 */
+            margin-top: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #9ca3af; /* text-gray-400 */
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: rgba(10, 9, 45, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        /* Mobile Menu (initially hidden) */
+        .mobile-menu-button { display: none; }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-button { display: block; background: none; border: none; color: white; cursor: pointer; }
+        }
+
+    </style>
 </head>
 <body>
 
-  <header>
-    Welcome to My Homepage
-  </header>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="logo">ML<span>Hub</span></a>
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="#about">About</a>
+                <a href="{{ url_for('projects') }}">Projects</a>
+                <a href="#" class="contact-btn">Contact</a>
+            </nav>
+            <button class="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+        </div>
+    </header>
 
-  <nav>
-    <a href="{{ url_for('home') }}">Home</a>
-    <a href="#">About</a>
-    <a href="{{ url_for('projects') }}">Projects</a>
-    <a href="#">Contact</a>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bringing Machine Learning <br> to Life</h1>
+            <p>Explore interactive machine learning models and see how data can be transformed into intelligent predictions.</p>
+            <a href="{{ url_for('projects') }}" class="cta-button">Try a Prediction Model</a>
+        </div>
+    </section>
 
-  <section class="hero">
-    <h1>Your Journey Starts Here</h1>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Do</h2>
+                <p class="title-p">We specialize in creating intuitive and powerful web applications powered by robust machine learning algorithms.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Intelligent Models</h3>
+                    <p>Using state-of-the-art algorithms to provide accurate and reliable predictions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Modern UI/UX</h3>
+                    <p>Designing beautiful, responsive, and user-friendly interfaces for a seamless experience.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Flask Powered</h3>
+                    <p>Built on a robust and scalable Python backend with the Flask framework.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! I'm passionate about web development and design. This homepage is a starting point for my online presence.
-      Stay tuned for projects, blogs, and more cool stuff!
-    </p>
-  </section>
-
-  <footer>
-    &copy; 2025 My Homepage. All rights reserved.
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MLHub. All rights reserved. Designed with ❤️.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
