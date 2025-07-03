@@ -37,5 +37,5 @@
 # text = f'my age is {age}'
 # print(text)
 
-text = 'my name is "Hitesh""
+text = 'my name is "Hitesh'
 print(text)
