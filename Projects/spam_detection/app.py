@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def home():
-    return render_template("index.html")
+    return render_template("home.html")
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -25,7 +25,7 @@ def predict():
     except Exception as e:
         return render_template('result.html',prediction = f"Error :{str(e)}")
 
-    return render_template("index.html")
+    return render_template("home.html")
 
 
 
