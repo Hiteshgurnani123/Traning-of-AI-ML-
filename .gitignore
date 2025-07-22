@@ -1,0 +1,15 @@
+# Torch DLLs and libs (large files)
+ASL YOLO/asl/Lib/site-packages/torch/lib/cublasLt64_11.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/cudnn_adv64_9.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/cudnn_engines_precompiled*
+ASL YOLO/asl/Lib/site-packages/torch/lib/cudnn_ops64_9.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/cufft64_10.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/cusolver64_11.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/cusolverMg64_11.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/cusparse64_11.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/dnnl.lib
+ASL YOLO/asl/Lib/site-packages/torch/lib/torch_cpu.dll
+ASL YOLO/asl/Lib/site-packages/torch/lib/torch_cuda.dll
+
+# CSV Dataset
+deep learning/CNN/fer2013.csv
